@@ -3,17 +3,15 @@ import sys
 
 
 def main():
-    arg_count = len(sys.argv) - 1
-    print("{:d} ".format(arg_count), end="")
-    if arg_count == 0:
-        print("argument.")
+    count = len(sys.argv) - 1
+    if count == 0:
+        print("0 arguments.")
+    elif count == 1:
+        print("1 argument:")
     else:
-        if arg_count == 1:
-            print("argument:".format(arg_count))
-        else:
-            print("arguments:".format(arg_count))
-        for i in range(1, len(sys.argv)):
-            print("{:d}: {}".format(i, sys.argv[i]))
+        print("{} arguments:".format(count))
+    for i in range(count):
+        print("{}: {}".format(i + 1, sys.argv[i + 1]))
 
 
 if __name__ == "__main__":
