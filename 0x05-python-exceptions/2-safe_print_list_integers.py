@@ -17,6 +17,6 @@ def safe_print_list_integers(my_list=None, x=0):
                 count_integers += 1
         print()
         return count_integers
-    except (IndexError, ValueError, TypeError):
+    except (ValueError, TypeError):
         print()
         return count_integers
