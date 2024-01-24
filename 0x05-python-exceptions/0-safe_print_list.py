@@ -1,6 +1,4 @@
 #!/usr/bin/python3
-
-
 def safe_print_list(my_list=None, x=0):
     """Function that prints x elements of a list."""
 
