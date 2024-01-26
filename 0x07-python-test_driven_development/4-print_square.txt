@@ -1,0 +1,80 @@
+The ``Square`` module
+=====================
+
+Using ``print_square``
+----------------------
+
+Get the ``print_square`` function from the ``Square`` module
+    >>> print_square = __import__('4-print_square').print_square
+
+Test cases
+----------
+
+	>>> print_square(4)
+	####
+	####
+	####
+	####
+
+	>>> print_square(10)
+	##########
+	##########
+	##########
+	##########
+	##########
+	##########
+	##########
+	##########
+	##########
+	##########
+
+	>>> print_square(0)
+
+	>>> print_square(-4)
+	Traceback (most recent call last):
+	ValueError: size must be >= 0
+
+	>>> print_square("joe")
+	Traceback (most recent call last):
+	TypeError: size must be an integer
+
+	>>> print_square({1, 3})
+	Traceback (most recent call last):
+	TypeError: size must be an integer
+
+	>>> print_square((1, 2))
+	Traceback (most recent call last):
+	TypeError: size must be an integer
+
+	>>> print_square({44: "hello"})
+	Traceback (most recent call last):
+	TypeError: size must be an integer
+
+	>>> print_square([1, 2])
+	Traceback (most recent call last):
+	TypeError: size must be an integer
+
+	>>> print_square(None)
+	Traceback (most recent call last):
+	TypeError: size must be an integer
+
+	>>> print_square(4.3)
+	Traceback (most recent call last):
+	TypeError: size must be an integer
+
+	>>> print_square(-4.3)
+	Traceback (most recent call last):
+	TypeError: size must be an integer
+
+	>>> print_square(float("inf"))
+	Traceback (most recent call last):
+	TypeError: size must be an integer
+
+	>>> print_square(True)
+	#
+
+	>>> print_square(False)
+
+	>>> print_square()
+	Traceback (most recent call last):
+	TypeError: print_square() missing 1 required positional argument: 'size'
