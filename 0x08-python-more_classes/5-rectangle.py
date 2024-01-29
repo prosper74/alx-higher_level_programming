@@ -59,7 +59,6 @@ class Rectangle:
         Setter method for setting the height of the rectangle.
         Args:
             value (int): The new height value.
-
         Raises:
             TypeError: If the value is not an integer.
             ValueError: If the value is less than 0.
@@ -73,6 +72,7 @@ class Rectangle:
     def area(self):
         """
         Calculates and returns the area of the rectangle.
+
         Returns:
             int: The area of the rectangle.
         """
@@ -103,3 +103,9 @@ class Rectangle:
             str: A string representation of the rectangle that can be used to recreate the object.
         """
         return f"Rectangle({self.width}, {self.height})"
+
+    def __del__(self):
+        """
+        Prints a message when an instance of Rectangle is deleted.
+        """
+        print("Bye rectangle...")
