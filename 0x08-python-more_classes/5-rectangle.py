@@ -100,7 +100,8 @@ class Rectangle:
         """
         Returns a string representation of the rectangle for recreation.
         Returns:
-            str: A string representation of the rectangle that can be used to recreate the object.
+            str: A string representation of the rectangle that can be used
+            to recreate the object.
         """
         return f"Rectangle({self.width}, {self.height})"
 
