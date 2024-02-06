@@ -13,4 +13,3 @@ def class_to_json(obj):
     :param filename: The JSON file
     """
     return obj.__dict__
-    
