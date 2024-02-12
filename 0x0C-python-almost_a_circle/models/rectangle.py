@@ -119,6 +119,32 @@ class Rectangle(Base):
             print("#" * self.width)
 
     def __str__(self):
-        """Return the print() and str() representation of the Rectangle."""
+        """
+        Override the __str__ method to return:
+        [Rectangle] (<id>) <x>/<y> - <width>/<height>
+        """
         return "[Rectangle] ({}) {}/{} -{}/{}".format(
             self.id, self.x, self.y, self.width, self.height)
+
+    def update(self, *args):
+        """
+        Assigns an argument to each attribute:
+        1st argument should be the 'id' attribute
+        2nd argument should be the 'width' attribute
+        3rd argument should be the 'height' attribute
+        4th argument should be the 'x' attribute
+        5th argument should be the 'y' attribute
+        :param arguements: variable number of positional arguments
+        """
+        if args:
+            for i, arg in enumerate(args):
+                if i == 0 and arg is not None:
+                    self.id = arg
+                elif i == 1:
+                    self.width = arg
+                elif i == 2:
+                    self.height = arg
+                elif i == 3:
+                    self.x = arg
+                elif i == 4:
+                    self.y = arg
