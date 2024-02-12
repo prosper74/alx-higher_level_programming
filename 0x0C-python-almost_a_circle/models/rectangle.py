@@ -29,3 +29,68 @@ class Rectangle(Base):
         self.x = x
         self.y = y
         super().__init__(id)
+
+    @property
+    def width(self):
+        """Getter for the width of the Rectangle class"""
+        return self.__width
+
+    @width.setter
+    def width(self, value):
+        """
+        Setter for the width of the Rectangle class
+        :param value: The value to set the width
+        """
+        if isinstance(value) != int:
+            raise TypeError("width must be an integer")
+        if value <= 0:
+            raise ValueError("width must be > 0")
+        self.__width = value
+
+    @property
+    def height(self):
+        """Getter for height of the Rectangle class."""
+        return self.__height
+
+    @height.setter
+    def height(self, value):
+        """
+        Setter for height of the Rectangle class
+        :param value: The height of the Rectangle class
+        """
+        if isinstance(value) != int:
+            raise TypeError("height must be an integer")
+        if value <= 0:
+            raise ValueError("height must be > 0")
+        self.__height = value
+
+    @property
+    def x(self):
+        """Getter for the x coordinate"""
+        return self.__x
+
+    @x.setter
+    def x(self, value):
+        """
+        Setter for the x coordinate
+        :param value: Value to set the x coordinate
+        """
+        if isinstance(value) != int:
+            raise TypeError("x must be an integer")
+        if value < 0:
+            raise ValueError("x must be >= 0")
+        self.__x = value
+
+    @property
+    def y(self):
+        """Getter for the y coordinate"""
+        return self.__y
+
+    @y.setter
+    def y(self, value):
+        """Setter for the y coordinate"""
+        if isinstance(value) != int:
+            raise TypeError("y must be an integer")
+        if value < 0:
+            raise ValueError("y must be >= 0")
+        self.__y = value
