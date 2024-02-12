@@ -126,7 +126,7 @@ class Rectangle(Base):
         return "[Rectangle] ({}) {}/{} -{}/{}".format(
             self.id, self.x, self.y, self.width, self.height)
 
-    def update(self, *args):
+    def update(self, *args, **keyword_args):
         """
         Assigns an argument to each attribute:
         1st argument should be the 'id' attribute
@@ -148,3 +148,15 @@ class Rectangle(Base):
                     self.x = arg
                 elif i == 4:
                     self.y = arg
+        elif keyword_args:
+            for k, v in keyword_args.items():
+                if k == "id" and v is not None:
+                    self.id = v
+                elif k == "width":
+                    self.width = v
+                elif k == "height":
+                    self.height = v
+                elif k == "x":
+                    self.x = v
+                elif k == "y":
+                    self.y = v
