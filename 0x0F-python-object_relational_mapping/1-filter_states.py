@@ -1,18 +1,16 @@
 #!/usr/bin/python3
-"""
-script that lists all states with a name starting with
-N (upper N) from the database hbtn_0e_0_usa
-"""
 from sys import argv
 import MySQLdb
 
 if __name__ == '__main__':
-    db_conn = MySQLdb.connect(user=argv[1], passwd=argv[2], db=argv[3])
-    cur = db_conn.cursor()
-    cur.execute("SELECT * FROM states WHERE name LIKE BINARY '{}'"
-                .format(argv[4]))
-    rows = cur.fetchall()
-    for row in rows:
-        print(row)
-    cur.close()
-    db_conn.close()
+    the_usa = MySQLdb.connect(user=argv[1], passwd=argv[2], db=argv[3])
+    commands = the_usa.cursor()
+    select_command = "SELECT * FROM states WHERE name = '{:s}'\
+    ORDER BY id ASC".format(argv[4])
+    commands.execute(select_command)
+    usa = commands.fetchall()
+    for state in usa:
+        if state[1] == argv[4]:
+            print(state)
+    commands.close()
+    the_usa.close()
