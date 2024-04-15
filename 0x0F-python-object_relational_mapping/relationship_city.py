@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """
 Defines a class City
+A model for the city instances
 """
 from relationship_state import Base
 from sqlalchemy import Column, Integer, String, ForeignKey
