@@ -1,24 +1,31 @@
 #!/usr/bin/python3
-"""Interview Preparation"""
+"""
+Function that finds a peak in a list of unsorted integers
+"""
 
 
 def find_peak(list_of_integers):
-    """function that finds a peak in a list of unsorted integers."""
-
-    if list_of_integers is None or list_of_integers == []:
+    """
+    finds num that's greater than both left and right
+    """
+    if len(list_of_integers) == 0:
         return None
-    lo = 0
-    hi = len(list_of_integers)
-    mid = ((hi - lo) // 2) + lo
-    mid = int(mid)
-    if hi == 1:
-        return list_of_integers[0]
-    if hi == 2:
-        return max(list_of_integers)
-    if list_of_integers[mid] >= list_of_integers[mid - 1] and\
-            list_of_integers[mid] >= list_of_integers[mid + 1]:
-        return list_of_integers[mid]
-    if mid > 0 and list_of_integers[mid] < list_of_integers[mid + 1]:
-        return find_peak(list_of_integers[mid:])
-    if mid > 0 and list_of_integers[mid] < list_of_integers[mid - 1]:
-        return find_peak(list_of_integers[:mid])
+
+    l = list_of_integers
+    beg = 0
+    end = len(l)-1
+
+    if l[beg] > l[beg+1]:
+        return l[beg]
+    if l[end] > l[end-1]:
+        return l[end]
+
+    mid = (beg+end)//2
+    if l[mid-1] < l[mid] and l[mid+1] < l[mid]:
+        return l[mid]
+    if l[mid] < l[mid-1]:
+        return find_peak(l[beg:mid+1])
+    elif l[mid] < l[mid+1]:
+        return find_peak(l[mid:end+1])
+    else:
+        return l[beg]
