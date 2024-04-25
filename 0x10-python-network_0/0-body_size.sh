@@ -5,4 +5,4 @@
 #   The size must be displayed in bytes
 #   You have to use curl
 
-curl -s "$1" | wc -c
+curl -sI "$1" | grep 'Content-Length:' | cut -f2 -d' '
