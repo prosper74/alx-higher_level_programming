@@ -1,8 +1,5 @@
 #!/usr/bin/python3
-"""
-Interview Preparation
-Finds a peak in a list of unsorted integers
-"""
+"""Interview Preparation"""
 
 
 def find_peak(list_of_integers):
